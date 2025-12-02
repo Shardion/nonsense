@@ -51,22 +51,22 @@ of a single game properly.
 Steam supports wrappers by replacing any instance of `%command%` in a game's
 launch options with the actual command that will be run, so you'll have to open
 the properties window for your game, and set the launch options to
-\<nonsense binary\>` wrap `\<gamename\>` %command%`.
+`<nonsense binary> wrap <gamename> %command%`.
 
 Bottles supports wrappers in the same way as Steam. Open the options menu for
 your game, click *Change Launch Options...*, and set *Command Arguments* to
-\<nonsense binary\>` wrap `\<gamename\>` %command%`.
+`<nonsense binary> wrap <gamename> %command%`.
 
 Start your game, open Discord's Registered Games menu, click the tiny link text
-reading *Add it!*, and then select \<gamename\>`.nonsense-game` from the list.
+reading *Add it!*, and then select `<gamename>.nonsense-game` from the list.
 (Do not click the one that ends in ` (deleted)`. It might work, but not
 intentionally.) You can then scroll down to the list of Added Games, click the
-name \<gamename\>`.nonsense-game`, and change it to the title of any game
+name `<gamename>.nonsense-game`, and change it to the title of any game
 listed on [IGDB](https://www.igdb.com/).
 
 ## Notes
 
 - Discord determines the process name from the link target of
-  `/proc/`\<pid\>`/exe`. It does not use `/proc/`\<pid\>`/comm`, or
-  `/proc/`\<pid\>`/cmdline`, in any way.
+  `/proc/<pid>/exe`. It does not use `/proc/<pid>/comm`, or
+  `/proc/<pid>/cmdline`, in any way.
 

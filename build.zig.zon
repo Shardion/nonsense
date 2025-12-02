@@ -1,0 +1,15 @@
+.{
+    .name = .Nonsense,
+    .version = "0.0.0",
+    .fingerprint = 0xdf3c99763e849461,
+    .minimum_zig_version = "0.16.0-dev.13+1594c8055",
+    .dependencies = .{},
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "LICENSE",
+        "README.md",
+    },
+}
+

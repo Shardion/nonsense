@@ -3,6 +3,19 @@
 Very rough tool to run processes with arbitrary names inside Discord's Flatpak
 sandbox.
 
+## Why is this necessary?
+
+The only way for Discord to discover running games, assuming they don't support
+Rich Presence, is to scan all running processes. When Flatpak is in use, Discord
+can't see any other processes on the system. This is great for security, but
+also means that you can't set a Playing status for any process not running
+inside Discord's sandbox.
+
+I don't think Flatpak supports applications sharing PID namespaces with the
+host. Nonsense's approach has no security benefit, since it requires the
+application running the game to be able to break out of the Flatpak sandbox,
+which breaks sandboxing, by definition...
+
 ## How to use
 
 Install the `nonsense` binary to a place that Discord and your game launcher
@@ -37,25 +50,12 @@ instance of `%command%` in a game's launch options with the actual command that
 will be run, so you should set the launch options to
 \<nonsense binary\>` wrap `\<gamename\>` %command%`.
 
-Start your game, open Discord's Registered Games menu, click the tiny text that
-says *Add it!*, and then select \<gamename\>`.nonsense-game` from the list. (Do
-not click the one that ends in ` (deleted)`. It might work, but not
+Start your game, open Discord's Registered Games menu, click the tiny link text
+reading *Add it!*, and then select \<gamename\>`.nonsense-game` from the list.
+(Do not click the one that ends in ` (deleted)`. It might work, but not
 intentionally.) You can then scroll down to the list of Added Games, click the
 name \<gamename\>`.nonsense-game`, and change it to the title of any game
 listed on [IGDB](https://www.igdb.com/).
-
-## Why is this necessary?
-
-The only way for Discord to discover running games, assuming they don't support
-Rich Presence, is to scan all running processes. When Flatpak is in use, Discord
-can't see any other processes on the system. This is great for security, but
-also means that you can't set a Playing status for any process not running
-inside Discord's sandbox.
-
-I don't think Flatpak supports applications sharing PID namespaces with the
-host. Nonsense's approach has no security benefit, since it requires the
-application running the game to be able to break out of the Flatpak sandbox,
-which breaks sandboxing, by definition...
 
 ## Notes
 

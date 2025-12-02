@@ -18,6 +18,8 @@ which breaks sandboxing, by definition...
 
 ## Limitations
 
+- Requires to manually set up every single game that you want playing statuses
+  for.
 - Discord release channels other than stable will not work. (It's OK, they're
   all identical now, since everything is an A/B test, anyways...)
 - I think that's it...?

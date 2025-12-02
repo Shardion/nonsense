@@ -16,6 +16,12 @@ host. Nonsense's approach has no security benefit, since it requires the
 application running the game to be able to break out of the Flatpak sandbox,
 which breaks sandboxing, by definition...
 
+## Limitations
+
+- Discord release channels other than stable will not work. (It's OK, they're
+  all identical now, since everything is an A/B test, anyways...)
+- I think that's it...?
+
 ## How to use
 
 Install the `nonsense` binary to a place that Discord and your game launcher
@@ -37,18 +43,14 @@ Take a second to think of a short name for your game that doesn't use spaces.
 This is your \<gamename\>. (Technically, you can use spaces, and any other
 character except `/`, but that will make it slightly more annoying.)
 
-Bottles is an example of the former case. Edit your game's launch options
-to set \<nonsense binary\> as the pre-run script and post-run script.
-Set the pre-run script arguments to `spawn `\<gamename\>, and the post-run
-script arguments to `kill `\<gamename\>. (Do note that this doesn't work
-perfectly if you run multiple instances of the game at the same time, but you
-wouldn't do that, right...?)
+Wrapper commands are generally preferred, since they handle multiple instances
+of a single game properly.
 
-Steam is an example of the latter case. Edit your game's launch options to run
-the Nonsense binary as a wrapper. Steam supports wrappers by replacing any
-instance of `%command%` in a game's launch options with the actual command that
-will be run, so you should set the launch options to
-\<nonsense binary\>` wrap `\<gamename\>` %command%`.
+Steam supports wrappers by replacing any instance of `%command%` in a game's
+launch options with the actual command that will be run, so you should set the
+launch options to \<nonsense binary\>` wrap `\<gamename\>` %command%`.
+
+Bottles supports wrappers in the same way as Steam.
 
 Start your game, open Discord's Registered Games menu, click the tiny link text
 reading *Add it!*, and then select \<gamename\>`.nonsense-game` from the list.
